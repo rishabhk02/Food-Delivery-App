@@ -1,0 +1,72 @@
+<!-- Menu-Button Script -->
+<script>
+    let menubtn = document.getElementById('menu_btn');
+    let menuList = document.getElementById('nav_list');
+    menubtn.addEventListener('click', () => {
+        menuList.classList.toggle('active');
+        if (menubtn.classList.contains('fa-bars')) {
+            menubtn.classList.remove('fa-bars');
+            menubtn.classList.add('fa-circle-xmark');
+        } else {
+            menubtn.classList.add('fa-bars');
+            menubtn.classList.remove('fa-circle-xmark');
+        }
+    })
+</script>
+
+<!-- Offer Script -->
+<script>
+    let carousel = document.querySelector('.offers_carousel');
+    let arrowIcons = document.querySelectorAll('.offers_inner i');
+    let images = document.querySelectorAll('.offers_carousel img');
+    let firstImageWidth = images[0].clientWidth + 150;
+
+    let isDragStart = false, prevPageX, prevScrollLeft;
+
+    const dragStart = (e)=>{
+        // updating global variables value on mouse down event
+        isDragStart = true;
+        prevPageX = e.pageX || e.touches[0].pageX;
+        prevScrollLeft = carousel.scrollLeft;
+    }
+
+    const dragProcess = (e)=>{
+        // scrolling images/carousel to left according to mouse pointer
+        if (!isDragStart) return;
+        e.preventDefault();
+        carousel.classList.add('dragging');
+        let positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+        carousel.scrollLeft = prevScrollLeft - positionDiff;
+    }
+
+    const dragStop = ()=>{
+        isDragStart = false;
+        carousel.classList.remove('dragging');
+    }
+
+    carousel.addEventListener('touchstart',dragStart);
+    carousel.addEventListener('mousedown',dragStart)
+
+    carousel.addEventListener('mousemove',dragProcess);
+    carousel.addEventListener('touchmove',dragProcess);
+
+    carousel.addEventListener('mouseup',dragStop);
+    carousel.addEventListener('touchend',dragStop);
+
+
+    arrowIcons.forEach(element => {
+        element.addEventListener('click', () => {
+            console.log(carousel.scrollLeft);
+            carousel.scrollLeft += element.id == 'left' ? -firstImageWidth :
+                firstImageWidth;
+            console.log(carousel.scrollLeft);
+        })
+    });
+
+</script>
+
+<!-- Font-Awesome CDN -->
+<script src="https://kit.fontawesome.com/e467b80794.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

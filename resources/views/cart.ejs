@@ -1,0 +1,64 @@
+<%- include('partials/header') %>
+
+<!-- Empty cart -->
+<div class="emptyCart">
+    <div class="emptyCart_img">
+        <img src="Images/EmptyCart.png" alt="">
+    </div>
+    <div class="emptyCart_detail">
+        <p class="emptyCartHead">Your Cart is Empty☹️☹️</p>
+        <p class="emptyCart_p">Looks like you have not added anything to your cart<br> Go ahead & add items</p>
+        <div class="emptyCart_btn">
+            <a href="/menu">Go Back</a>
+        </div>
+    </div>
+</div>
+
+<!-- Cart Containing Items -->
+<div class="orderSummary_outer">
+    <div class="orderSummary_inner">
+        <div class="orderSummary_heading">
+            <img src="Images/cart-2.png" alt="" >
+            <p>&nbsp; &nbsp; Order Summary</p>
+        </div>
+        <div class="orderSummar_row_head">
+            <div class="ItemDescript_head">Item  Description</div>  
+            <div class="ItemQuantity_head">Quantity</div>        
+            <div class="Amount_head">Amount</div>      
+        </div>
+
+        <div class="orderSummar_row">
+            <div class="ItemDescript">VegPizza</div>  
+            <div class="ItemQuantity">1 Pcs</div>        
+            <div class="Amount">&#8377; 120</div>      
+        </div>
+
+        <div class="orderSummar_row">
+            <div class="ItemDescript">Non-VegPizza</div>  
+            <div class="ItemQuantity">1 Pcs</div>        
+            <div class="Amount">&#8377; 220</div>      
+        </div>
+        
+
+        <div class="orderSummar_total">                
+            <div class="totalAmnt">Total Amount: </div>  
+            <div class=""></div>        
+            <div class="totalVal">&#8377; 360</div>      
+        </div>
+
+        <div class="orderSummar_detail">
+            <form action="/orders" method="post" id="orders">
+                <input type="text" placeholder="Enter deliver address" class="addressInput" name="address" autocomplete="off">
+                <input type="text" placeholder="Entery phone number" class="addressInput" name="phone" autocomplete="off">
+                <div class="order_submitBtn">
+                    <div class="insideSubmitBtn">
+                        <a onclick="document.getElementById('orders').submit()">Place Order</a>
+                    </div>            
+                    <!-- <div class="insideSubmitBtn" >
+                        <a href="/login">Login</a>
+                    </div>                           -->
+                </div>
+            </form>                  
+        </div>
+    </div>
+</div>
