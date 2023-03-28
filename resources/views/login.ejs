@@ -1,25 +1,25 @@
-<%- include('partials/header');
+<%- include('partials/header') %>
 <div class="login_outer">
     <div class="screen">
         <div class="screen__content">
-            <form class="login">
+            <form class="login" action="/login" method="post">
+                <% if(messages.error){ %>
+                    <span style="color:red"><%= messages.error %></span>
+                <% } %>
+                
                 <div class="login__field">
-                    <i class="login__icon fas fa-user"></i>
-                    <input type="text" class="login__input" placeholder="User name / Email">
+                    <input type="text" class="login__input" placeholder="Enter your Email" name="email">
                 </div>
                 <div class="login__field">
-                    <i class="login__icon fas fa-user"></i>
-                    <input type="text" class="login__input" placeholder="User name / Email">
+                    <input type="password" class="login__input" placeholder="Password" name="password">
                 </div>
-                <div class="login__field">
-                    <i class="login__icon fas fa-lock"></i>
-                    <input type="password" class="login__input" placeholder="Password">
-                </div>
-                <button class="button login__submit">
+                <button class="button login__submit" type="submit">
                     <span class="button__text">Log In Now</span>
-                    <i class="button__icon fas fa-chevron-right"></i>
-                </button>
+                </button>                
             </form>
+            <button class="signUpBtn">
+                <a href="/register"><span class="button__text">Sign Up</span></a>
+            </button>
         </div>
         <div class="screen__background">
             <span class="screen__background__shape screen__background__shape4"></span>
@@ -29,3 +29,4 @@
         </div>
     </div>
 </div>
+<%- include('partials/footer') %>

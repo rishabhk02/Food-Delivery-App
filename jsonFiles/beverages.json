@@ -1,0 +1,27 @@
+[
+    {
+        "name":"7 Up Can",
+        "image":"Drinks/7up_Can_57.jpg",
+        "price":57.14
+    },
+    {
+        "name":"Mirinda Can",
+        "image":"Drinks/Mirinda_can_57.jpg",
+        "price":57.14
+    },
+    {
+        "name":"Pepsi Black Can",
+        "image":"Drinks/PepsBlack_can_57.jpg",
+        "price":57.14
+    },
+    {
+        "name":"Pepsi Bottle",
+        "image":"Drinks/Pepsi_Bottle_57.jpg",
+        "price":57.14
+    },
+    {
+        "name":"Pepsi Can",
+        "image":"Drinks/PepsiCan.webp",
+        "price":57.14
+    }
+]

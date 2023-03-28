@@ -1,0 +1,27 @@
+[
+    {
+        "name":"Chicken Dominator",
+        "image":"NonVegPizza/Chicken_Dominator.png",
+        "price":179
+    },
+    {
+        "name":"Chicken Golden Delight",
+        "image":"NonVegPizza/Chicken_Golden_delight.png",
+        "price":199
+    },
+    {
+        "name":"Chicken Fiesta",
+        "image":"NonVegPizza/Chiecken_Fiesta.png",
+        "price":175
+    },
+    {
+        "name":"Non-veg Supreme",
+        "image":"NonVegPizza/Non_veg_supreme.png",
+        "price":199
+    },
+    {
+        "name":"Pepper Barbeque & Onion",
+        "image":"NonVegPizza/Pepper_Barbeque_&_Onion.jpg",
+        "price":149
+    }
+]

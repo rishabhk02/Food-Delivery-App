@@ -1,6 +1,7 @@
 <%- include('partials/header') %>
 
 <!-- Empty cart -->
+<% if(!session.cart){ %>
 <div class="emptyCart">
     <div class="emptyCart_img">
         <img src="Images/EmptyCart.png" alt="">
@@ -9,10 +10,11 @@
         <p class="emptyCartHead">Your Cart is Empty☹️☹️</p>
         <p class="emptyCart_p">Looks like you have not added anything to your cart<br> Go ahead & add items</p>
         <div class="emptyCart_btn">
-            <a href="/menu">Go Back</a>
+            <a href="/#menu">Go Back</a>
         </div>
     </div>
 </div>
+<% }else{ %>
 
 <!-- Cart Containing Items -->
 <div class="orderSummary_outer">
@@ -27,23 +29,21 @@
             <div class="Amount_head">Amount</div>      
         </div>
 
-        <div class="orderSummar_row">
-            <div class="ItemDescript">VegPizza</div>  
-            <div class="ItemQuantity">1 Pcs</div>        
-            <div class="Amount">&#8377; 120</div>      
-        </div>
+        <% for(let item of Object.values(session.cart.items)){ %>
 
         <div class="orderSummar_row">
-            <div class="ItemDescript">Non-VegPizza</div>  
-            <div class="ItemQuantity">1 Pcs</div>        
-            <div class="Amount">&#8377; 220</div>      
+            <div class="ItemDescript"><%= item.item.name %></div>  
+            <div class="ItemQuantity"><%= item.qty %></div>        
+            <div class="Amount">&#8377; <%=(item.qty)*(item.item.price) %></div>      
         </div>
+
+        <% } %>
         
 
         <div class="orderSummar_total">                
             <div class="totalAmnt">Total Amount: </div>  
             <div class=""></div>        
-            <div class="totalVal">&#8377; 360</div>      
+            <div class="totalVal">&#8377; <%= session.cart.totalPrice %></div>      
         </div>
 
         <div class="orderSummar_detail">
@@ -56,9 +56,12 @@
                     </div>            
                     <!-- <div class="insideSubmitBtn" >
                         <a href="/login">Login</a>
-                    </div>                           -->
+                    </div> -->
+                         
                 </div>
             </form>                  
         </div>
     </div>
-</div>
+ </div> 
+ <% } %>
+<%- include('partials/footer') %>

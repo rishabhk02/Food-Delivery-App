@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<div class="menu_outer">
+    <div class="menu_inner">
+        <div class="menu_heading">
+            <p>Domino's Menu</p>
+        </div>
+        <div class="menu_row">
+            <% Data.forEach(function(curData){ %>
+                <div class="menu_col">
+                    <div class="menu_img"><img src='Images/<%= curData.image %>' alt=""></div>
+                    <div class="menu_detail">
+                        <p class="category_name"><%=curData.name%></p>
+                        <p class="category_name"><%=curData.price%></p>
+                        <div data-item="<%= JSON.stringify(curData) %>" class="view_btn add-To-Cart">
+                            + Add
+                        </div>
+                    </div>
+                </div>
+            <% }) %>       
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

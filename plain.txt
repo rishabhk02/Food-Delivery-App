@@ -1,33 +1,32 @@
-[+] Create directory structure
-[+] Create a NPM project and install all dependancies
+[Done] Create directory structure
+[Done] Create a NPM project and install all dependancies
     - Dependancies
         - express
         - ejs express-ejs-layouts
     - Dev dependancies
         - nodemon
-[+] Create Express server - Create a server.js file
-[+] Git setup and first commit
-[+] Install Laravel Mix
+[Done] Create Express server - Create a server.js file
+[Done] Git setup and first commit
+[Done] Install Laravel Mix
     - setup js and scss
-[+] Install tailwind css
-[+] Create Home page using Html and Css
-[+] Create Cart page
+[Done] Create Home page using Html and Css
+[Done] Create Cart page
     - order summary section
     - empty cart section
-[+] - move routes to routes files
-[+] - Create dedicated controllers
-[+] Add to cart functionality
-    [+] Fetch all pizzas from db and show on home page
-    [+] Create menu model and put dummy Data
+[Done] - move routes to routes files
+[Done] - Create dedicated controllers
+[Done] Add to cart functionality
+    [Done] Fetch all pizzas from db and show on home page
+    [Done] Create menu model and put dummy Data
         - connect to mongo db
         - use connect-mongo for session store
             - dependancies
                 - mongoose, express-session, connect-mongo, dotenv
     - axios to send ajax request
     - install notification library npm i noty   https://ned.im/noty/#/
-[+] Create login page with route
-[+] Create register page with route
-[+] Build register crud
+[Done] Create login page with route
+[Done] Create register page with route
+[Done] Build register crud
     - dependancies express-flash express-session dotenv
     - status code article https://www.restapitutorial.com/httpstatuscodes.html
 [+] Build login using passport

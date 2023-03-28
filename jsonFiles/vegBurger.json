@@ -1,0 +1,17 @@
+[
+    {
+        "name":"2 Veg Krisper",
+        "image":"VegBurger/2_Veg Krisper_158.jpg",
+        "price":158
+    },
+    {
+        "name":"Veg Kripser Meal",
+        "image":"VegBurger/Veg_Kripser_Meal_268.jpg",
+        "price":268
+    },
+    {
+        "name":"Veg Zinger",
+        "image":"VegBurger/Veg_Zinger_179.jpg",
+        "price":179
+    }
+]

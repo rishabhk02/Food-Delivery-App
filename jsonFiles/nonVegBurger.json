@@ -1,0 +1,22 @@
+[
+    {
+        "name":"Chicken Krisper",
+        "image":"Chicken_Krisper_228.jpg",
+        "price":228
+    },
+    {
+        "name":"Classic Zinger",
+        "image":"NonVegBurger/Classic_Zinger_189.jpg",
+        "price":189
+    },
+    {
+        "name":"Mixe Zinger Doubles",
+        "image":"NonVegBurger/Mixe_Zinger_Doubles_348.jpg",
+        "price":348
+    },
+    {
+        "name":"Tandoori Zinger",
+        "image":"NonVegBurger/Tandoori_Zinger_199.jpg",
+        "price":199
+    }
+]
