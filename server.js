@@ -11,11 +11,11 @@ const flash = require('express-flash');
 const passport = require('passport');
 
 
-// JSON format
+// JSON format (add-to-cart);
 app.use(express.json());
 
 
-// URL encoded
+// URL encoded (register-form-data)
 app.use(express.urlencoded({ extended: false }));
 
 
@@ -49,11 +49,14 @@ app.use(flash());
 
 // Passport-config
 require('./serverSide/config/passport')(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 // Global-Middlewaes
 app.use((req,res,next)=>{
     res.locals.session = req.session;
+    res.locals.user = req.user;
     next();
 })
 
@@ -65,6 +68,8 @@ app.set('views', path.join(__dirname + '/resources/views'));
 
 // Getting all the routes
 require('./routes/route')(app);
+
+
 
 app.listen(PORT, function () {
     console.log(`Server is running on port ${PORT}`);

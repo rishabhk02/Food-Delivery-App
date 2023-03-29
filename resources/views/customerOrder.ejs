@@ -11,11 +11,20 @@
             <div class="Amount_head">Time</div>      
         </div>
 
-        <div class="allOrder_row">
-            <div class="orderId"><a href="/order/status">64197c15eef6fc7a3de300cd</a></div>  
-            <div class="address">Ayodhya</div>        
-            <div class="time">03:12 PM</div>      
-        </div> 
+        <% if(allorder.length){ %>
+            <% allorder.forEach((order)=>{ %>
+                <div class="allOrder_row">           
+                    <div class="orderId"><a href="/orderStatus/<%=order._id%>"><%= order._id %></a></div>  
+                    <div class="address"><%= order.deliveryAddress %></div>        
+                    <div class="time"><%= moment(order.createdAt).format('YYYY-MM-DD') %><br><%= moment(order.createdAt).format('hh:mm A') %></div>             
+                </div> 
+            <% }) %>
+        <% }else{%>
+            <p id="no_orders_found">No orders found</p>
+        <% } %>
     </div>
 </div>
+<script>
+    alert('Click on order id to track your order');
+</script>
 <%- include('partials/footer') %>

@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<div class="trackStatus">
+    <div class="order_status_heading">
+        <p>Order Id:</p>
+        <p><%= curOrder._id %></p>
+        <input id='hiddenInput' type="hidden" value="<%= JSON.stringify(curOrder) %>">
+    </div>    
+    <div class="trackLine">
+        <ul>
+            <li class="status_line completed" data-status="Placed"><span>Order Placed</span></li>
+            <li class="status_line" data-status="Confirmed"><span>Order Confirmed</span></li>
+            <li class="status_line" data-status="Prepared"><span>Order Prepared</span></li>
+            <li class="status_line" data-status="Delivered"><span>Order Delivered</span></li>
+            <li class="status_line" data-status="Completed"><span>Order Completed</span></li>
+        </ul>
+    </div>
+</div>
+<%- include('partials/footer') %>

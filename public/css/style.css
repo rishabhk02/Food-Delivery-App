@@ -66,7 +66,7 @@ body{
 .nav_menu ul{
     width: 100%;
     display: flex;
-    max-width: 600px;
+    max-width: 650px;
     justify-content: space-around;    
     align-items: center;    
 }
@@ -260,7 +260,7 @@ body{
 .menu_outer{
     width: 100%;
     margin-top: 100px;
-    height: 1000px;
+    /* height: 1000px; */
 }
 
 .menu_inner{
@@ -338,6 +338,82 @@ body{
     letter-spacing: 1px;
 }
 
+/* Menu Detail CSS */
+
+.menu_outer_detail{
+    width: 100%;
+    margin-top: 6px;
+    background-color: whitesmoke;
+    padding-top: 50px;
+    min-height: 90vh;
+}
+
+.menu_row_detail{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+    grid-row-gap: 80px;
+}
+
+.menu_row_detail:last-child{
+    margin-bottom: 50px;
+}
+
+.menu_col_detail{
+    width: 340px;
+    min-height: 400px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding-bottom: 20px;
+    background-color: #fff;
+}
+
+.menu_img_detail img{
+    width: 340px;
+    height: 250px;
+    border-radius: 10px 10px 0px 0px;   
+}
+
+.menu_detail_detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.category_name_detail{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Poppins';
+    padding: 16px 10px;
+    color: #E61A39;
+}
+
+.category_price_detail{
+    font-size: 20px;
+    color: #015d9b;
+    font-weight: bold;
+}
+
+.add_btn{
+    margin-top: 16px;
+    background-color: #E61A39;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add_btn a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Rubik';
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
 
 @media (max-width: 750px) {
     body{
@@ -347,6 +423,7 @@ body{
 
     /* Navbar-CSS */
     .nav_menu ul{
+        z-index: 111;
         position: absolute;
         top: 84px;
         right: 0;
@@ -455,6 +532,35 @@ body{
     .menu_row .menu_col .category_name{
         font-size: 22px;
     }
+
+    /* Menu-Detail CSS */
+    .menu_outer_detail .menu_inner{
+        width: 100%;
+        padding: 8px;
+    }
+
+    .menu_outer_detail .menu_inner .menu_row_detail{
+        margin-top: 30px;        
+        grid-template-columns: 1fr;        
+        grid-row-gap: 40px;
+        padding: 0px;
+     }
+
+    .menu_outer_detail .menu_inner .menu_row_detail .menu_col_detail{
+        width: 100%;
+        max-width: 300px;
+        height: 100%;
+        padding-bottom: 30px;
+        margin: 0px;
+    }
+
+     .menu_outer_detail .menu_inner .menu_row_detail .menu_col_detail img{
+        width: 100%;
+    }    
+
+    .menu_row_detail .menu_col_detail .category_name_detail{
+        font-size: 22px;
+    }
 }
 
 @media (max-width:1200px) {
@@ -464,7 +570,19 @@ body{
         
     }
 
+    .menu_col_detail{
+        width: 300px;
+        height: 350px;
+        
+    }
+
     .menu_img img{
+        width: 300px;
+        height: 210px;
+        border-radius: 10px 10px 0px 0px;   
+    }
+
+    .menu_img_detail img{
         width: 300px;
         height: 210px;
         border-radius: 10px 10px 0px 0px;   
@@ -495,21 +613,31 @@ body{
         grid-column-gap: 50px;
         grid-row-gap: 80px;
     }    
+
+    .menu_row_detail{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 50px;
+        grid-row-gap: 80px;
+    }    
 }
 
 
 
 
 /* Empty-Cart Css */
+
 .emptyCart{
     margin-top: 6px;
-    padding-top: 30px;
     background-color: whitesmoke;
     width: 100%;
-    height: 92vh;
+    min-height: 90vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .emptyCart_img img{
@@ -559,9 +687,10 @@ body{
 
 /* Full Cart CSS */
 .orderSummary_outer{
-    width: 100%;
+    margin-top: 50px;
     /* word-break: normal; */
     /* background-color: whitesmoke; */
+    padding: 18px;
 }
 
 .orderSummary_inner{
@@ -753,6 +882,16 @@ body{
     grid-template-columns: 2fr 1fr 1fr;
     padding: 10px 40px;
     font-size: 20px;  
+    grid-row-gap: 20px;
+}
+
+ #no_orders_found{
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 500;
+    color: #DE042E;
+    padding: 20px 8px;
 }
 
 .orderId a{
@@ -769,6 +908,7 @@ body{
 /* Admin-Order CSS */
 
 .adminOrder_outer{
+    margin-top: 50px;
     width: 100%;
 }
 
@@ -861,20 +1001,24 @@ td:nth-child(5){
 /* Login-CSS */
 .login_outer{
     width: 100%;
-    max-width: 360px;
-    height: 600px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);         
-    background-color: white;
-    padding: 20px;
+    margin-top: 20px;
+    min-height: 80vh;
+    display: flex;          
+    align-items: center;
+    justify-content: center;
 }
+
+/* position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);   */
 
 .screen {
     background: linear-gradient(90deg, #0b629cb6, #0b629cf3);
     box-shadow: 0px 0px 24px #0b629cb6;
-    height: 100%;          
+    height: 550px;        
+    width: 100%;
+    max-width: 320px;
     position: relative;
 }
 
@@ -1025,4 +1169,131 @@ td:nth-child(5){
     font-size: 24px;
     margin-left: auto;
     color: #7875B5;
+}
+
+/* Order-Status CSS */
+
+.trackStatus{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    max-width: 600px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.order_status_heading{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 500;
+    background-color: #015d9b;
+    color: #fff;
+    padding: 10px 10px;
+}
+
+.order_status_heading p{
+    font-family: 'Poppins';
+}
+
+.trackLine ul{
+    margin-top: 60px;
+    margin-left: 110px;
+}
+
+.trackLine ul li{
+    list-style-type: none;
+    padding-bottom: 80px;    
+    position: relative;
+}
+
+.trackLine ul li span{
+    position: relative;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    /* font-family: 'Poppins'; */
+    color: grey;
+}
+
+.trackLine ul li small{
+    margin-top: 5px;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Dots */
+.trackLine ul li span:after{
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: grey;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* Icons */
+.trackLine ul li span::before{
+    content: '\f46c';
+    font-family: 'Line Awesome Free';
+    font-size: 32px;
+    font-weight: 600;
+    position: absolute;
+    left: -90px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: inherit;
+}
+
+.trackLine ul li:nth-child(2) span::before{
+    content: '\f560';
+}
+
+.trackLine ul li:nth-child(3) span::before{
+    content: '\f818';
+}
+
+.trackLine ul li:nth-child(4) span::before{
+    content: '\f0d1';
+}
+
+.trackLine ul li:nth-child(5) span::before{
+    content: '\f582';
+}
+
+.trackLine ul li::before{
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: -16px;
+    width: 2px;
+    height: 80%;
+    background-color: grey;           
+    transform: translateY(-50%);    
+}
+
+.trackLine ul li:last-child::before{
+    height: 0%;
+}
+
+/* Completed-Steps CSS */
+
+.trackLine ul li.completed span:after{
+    background-color: #4BB543;
+}
+
+.trackLine ul li.completed::before{
+    background-color: #4BB543;
+}
+
+.trackLine ul li.completed span{
+    color: #4BB543;
 }

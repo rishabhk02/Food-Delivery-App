@@ -1,6 +1,13 @@
 const menuDetailController = require('../serverSide/controllers/menuDetailController');
 const cartController = require('../serverSide/controllers/cartController');
 const authController = require('../serverSide/controllers/authController');
+const orderController = require('../serverSide/controllers/orderController');
+
+// middlewares
+const guest = require('../serverSide/middlewares/guest');
+const auth =  require('../serverSide/middlewares/auth');
+const adminAuth = require('../serverSide/middlewares/adminAuth');
+const adminController = require('../serverSide/controllers/adminController');
 
 function routesInitialization(app){
     // Home routes
@@ -20,12 +27,22 @@ function routesInitialization(app){
     app.post('/addToCart',cartController().updateCart);
 
     // Login-routes
-    app.get('/login',authController().login);
+    app.get('/login',guest,authController().login);
     app.post('/login',authController().loginUser);
+    app.post('/logout',authController().logout);
     
     // Register-routes
-    app.get('/register',authController().register);
+    app.get('/register',guest,authController().register);
     app.post('/register',authController().addUser);
+
+    // Order-routes
+    app.post('/placeOrder',orderController().storeOrder);
+    app.get('/customerOrder',auth,orderController().orderpage);
+    app.get('/orderStatus/:id',auth,orderController().showStatus);
+
+    // admin-routes 
+    app.get('/adminPanel',adminAuth,adminController().adminPanel);
+    app.post('/updateOrderStatus',adminAuth,adminController().updateOrderStatus)
 }
 
 module.exports = routesInitialization;

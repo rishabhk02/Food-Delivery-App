@@ -1,20 +1,27 @@
 <%- include('../partials/header') %>
 
-<div class="menu_outer">
+<div class="menu_outer_detail">
     <div class="menu_inner">
         <div class="menu_heading">
-            <p>Domino's Menu</p>
+            <p><%= heading %></p>
         </div>
-        <div class="menu_row">
+        <div class="menu_row_detail">
             <% Data.forEach(function(curData){ %>
-                <div class="menu_col">
-                    <div class="menu_img"><img src='Images/<%= curData.image %>' alt=""></div>
-                    <div class="menu_detail">
-                        <p class="category_name"><%=curData.name%></p>
-                        <p class="category_name"><%=curData.price%></p>
-                        <div data-item="<%= JSON.stringify(curData) %>" class="view_btn add-To-Cart">
-                            + Add
-                        </div>
+                <div class="menu_col_detail">
+                    <div class="menu_img_detail"><img src='Images/<%= curData.image %>' alt=""></div>
+                    <div class="menu_detail_detail">
+                        <p class="category_name_detail"><%=curData.name%></p>
+                        <p class="category_price_detail">&#8377; <%=curData.price%></p>
+                        <% if(!user){ %>
+                            <div class="add_btn">
+                               <a style='text-decoration: none; color: #fff;'href="/login">+ Add</a>
+                            </div>
+                        <% }else{ %>
+                            <div data-item="<%= JSON.stringify(curData) %>" class="add_btn add-To-Cart">
+                                <a>+ Add</a>
+                            </div>
+                        <%}%>
+                        
                     </div>
                 </div>
             <% }) %>       
