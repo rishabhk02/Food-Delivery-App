@@ -1,41 +1,41 @@
 [
     {
         "name":"Deluxe Veggie",
-        "image":"Deluxe_Veggie.jpg",
+        "image":"VegPizza/Deluxe_Veggie.jpg",
         "price":125
     },
     {
         "name":"Digital Veggie Paradise",
-        "image":"Digital_Veggie_Paradise.jpg",
+        "image":"VegPizza/Digital_Veggie_Paradise.jpg",
         "price":79
     },
     {
         "name":"Double Cheese Margherita",
-        "image":"Double_Cheese_Margherita.jpg",
+        "image":"VegPizza/Double_Cheese_Margherita.jpg",
         "price":249
     },
     {
         "name":"Farmhouse Pizza",
-        "image":"Farmhouse.jpg",
+        "image":"VegPizza/Farmhouse.jpg",
         "price":175
     },
     {
         "name":"Indian Tandoori Paneer",
-        "image":"IndianTandooriPaneer.jpg",
+        "image":"VegPizza/IndianTandooriPaneer.jpg",
         "price":199
     },
     {
         "name":"Margherita",
-        "image":"Margherit.jpg",
+        "image":"VegPizza/Margherit.jpg",
         "price":139
     },
     {
         "name":"Mexican Green Wave",
-        "image":"Mexican_Green_Wave.jpg",
+        "image":"VegPizza/Mexican_Green_Wave.jpg",
         "price":199
     },{
         "name":"Paneer Makhni",
-        "image":"Paneer_Makhni.jpg",
+        "image":"VegPizza/Paneer_Makhni.jpg",
         "price":249
     }
 ]

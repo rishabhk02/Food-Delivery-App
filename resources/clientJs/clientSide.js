@@ -52,3 +52,18 @@ function statusUpdate(order){
 }
 
 statusUpdate(order);
+
+// Socket connetion - client side
+// const socket = io();
+
+// // When we come on order Status page then we have to send message to server
+// if(order){
+//     socket.emit('join',`order_${order._id}`);
+// }
+
+// socket.on('orderUpdated',(data)=>{
+//     const updatedOrder = {...order};
+//     updatedOrder.updatedAt = moment().format();
+//     updatedOrder.status = data.status;
+//     statusUpdate(updatedOrder);
+// })

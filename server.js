@@ -9,6 +9,7 @@ const session = require('express-session');
 const MongoDBStore = require('connect-mongo');
 const flash = require('express-flash');
 const passport = require('passport');
+const Emitter = require('events');
 
 
 // JSON format (add-to-cart);
@@ -33,6 +34,12 @@ let mongoStore = MongoDBStore.create({
     mongoUrl: 'mongodb://127.0.0.1:27017/FoodApp',
 });
 
+
+// Event Emitter to communicate between different files inside app
+const eventEmitter = new Emitter();
+
+// to access it anywhere in the project
+app.set('eventEmitter',eventEmitter);
 
 // session-config
 app.use(session({
@@ -71,6 +78,21 @@ require('./routes/route')(app);
 
 
 
-app.listen(PORT, function () {
+const server = app.listen(PORT, function () {
     console.log(`Server is running on port ${PORT}`);
+});
+
+
+// Socket-Connection
+const io = require('socket.io')(server);
+
+io.on('connection',(socket)=>{
+    // After a client is join we have to connect to any room
+    socket.on('join',(orderId)=>{
+        socket.on(orderId);
+    });
+});
+
+eventEmitter.on('orderUpdated',(data)=>{
+    io.to(`order_${data.id}`).emit('orderUpdated',data);
 });
