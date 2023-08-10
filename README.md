@@ -77,15 +77,13 @@ Open terminal and move to the project directory and run the below command
   <img src="ScreenShots/S1.png" alt="Screenshot 1" width="300" height="400"/>
   <img src="ScreenShots/S2.png" alt="Screenshot 2" width="300" height="400"/>
   <img src="ScreenShots/S4.png" alt="Screenshot 3" width="300" height="400"/>
-</p>
-<p align="">
-  <img src="ScreenShots/S5.png" alt="Screenshot 1" width="300" height="400"/>
+    <img src="ScreenShots/S5.png" alt="Screenshot 1" width="300" height="400"/>
   <img src="ScreenShots/S6.png" alt="Screenshot 2" width="300" height="400"/>
   <img src="ScreenShots/S7.png" alt="Screenshot 3" width="300" height="400"/>
-</p><p align="">
-  <img src="ScreenShots/S8.png" alt="Screenshot 1" width="300" height="400"/>
+   <img src="ScreenShots/S8.png" alt="Screenshot 1" width="300" height="400"/>
   <img src="ScreenShots/S9.png" alt="Screenshot 2" width="300" height="400"/>
 </p>
+
 
 
     
